@@ -1,6 +1,6 @@
 <?php
     include("config.php");
-    $query = "SELECT * FROM users  u join roles r on u.role_id = r.id";
+    $query = "SELECT *,u.id as user_id FROM users  u join roles r on u.role_id = r.id";
     $result = mysqli_query($conn, $query);
 ?>
 
@@ -22,6 +22,7 @@
                 <th>Email</th>
                 <th>Address</th>
                 <th>Role</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +34,9 @@
                     <td><?php echo $data["user_email"]; ?></td>
                     <td><?php echo $data["user_address"]; ?></td>
                     <td><?php echo $data["role_name"]; ?></td>
+                    <td>
+                        <a href="edit.php?id=<?php echo $data["user_id"]; ?>">Edit</a>
+                    </td>
                 </tr>
             <?php
                 }
