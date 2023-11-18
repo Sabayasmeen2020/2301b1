@@ -1,7 +1,8 @@
 <?php
+  
     include("header.php");
+    include('config.php');
     if(isset($_POST['submit'])){
-      include('config.php');
       $user_email = $_POST['user_email'];
       $user_password = $_POST['user_password'];
 
@@ -10,15 +11,21 @@
       $result = mysqli_query($conn, $query);
       $data = mysqli_fetch_array($result);
       if(mysqli_num_rows($result) > 0){
-          header("Location:index.php");
+          $_SESSION['user_id'] = $data['id'];
+          $_SESSION['user_name'] = $data['user_name'];
+          echo "<script>location.href = 'index';</script>";
       }
       else{
           echo "<div class='alert alert-danger w-75 mt-5 mx-auto' role='alert'>
-          Username or password is incorrect
-        </div>";
+                  Username or password is incorrect
+                </div>";
       }
     
   }
+  if(isset($_SESSION['user_id'])){
+    echo "<script>location.href = 'index.php';</script>";
+  }
+  else{
 ?>
 
 <main id="main">
@@ -57,4 +64,6 @@
 <?php
     
     include("footer.php");
+  }
+ 
 ?>

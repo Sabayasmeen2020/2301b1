@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +61,7 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index.php" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Impact<span>.</span></h1>
@@ -79,7 +82,24 @@
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="login.php">Login</a></li>
+          <?php
+            if(isset($_SESSION['user_id'])){
+          ?>
+              <li class="dropdown"><a href="#"><span><?php echo $_SESSION["user_name"]?></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="profile.php?id=<?php echo $_SESSION['user_id']?>">Profile</a></li>
+                  <li><a href="logout.php">Logout</a></li>
+                </ul>
+              </li>
+          <?php
+            }
+            else{
+          ?>
+            <li><a href="login.php">Login</a></li>
+          <?php
+            }
+          ?>
+          
         </ul>
       </nav><!-- .navbar -->
 
