@@ -1,3 +1,4 @@
+
 <div class="footer_part">
 <div class="container-fluid">
 <div class="row">
@@ -183,5 +184,5 @@ How can I help you?</P>
 <script src="js/custom.js"></script>
 </body>
 
-<!-- Mirrored from demo.dashboardpack.com/sales-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Nov 2023 05:55:20 GMT -->
+<!-- Mirrored from demo.dashboardpack.com/sales-html/index_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Nov 2023 05:55:35 GMT -->
 </html>

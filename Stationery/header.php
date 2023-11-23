@@ -87,7 +87,7 @@
           ?>
               <li class="dropdown"><a href="#"><span><?php echo $_SESSION["user_name"]?></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
-                  <li><a href="profile.php?id=<?php echo $_SESSION['user_id']?>">Profile</a></li>
+                  <li><a href="profile.php">Profile</a></li>
                   <li><a href="logout.php">Logout</a></li>
                 </ul>
               </li>
